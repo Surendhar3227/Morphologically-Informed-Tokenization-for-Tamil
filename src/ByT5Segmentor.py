@@ -228,10 +228,10 @@ def main():
     parser.add_argument('column', nargs='+', help='What column in the segmentation')
     args = parser.parse_args()
     segmentation_column = " ".join(args.column)
-    specific_path = os.path.join(segmentor_path, segmentation_column.replace("'",''))
+    specific_path = os.path.join([SEGMENTOR_TRAINING_COPRUS_PATH], segmentation_column.replace("'",''))
     print(specific_path)
     
-    model = ByT5SegmentationModel(model_name="/mnt/vast-react/home/surendhar.m/u17842/gpu_workspace/byt5-small")
+    model = ByT5SegmentationModel(model_name=[LOADED_PRETRAINED_SEGMENTOR_MODEL_PATH])
     train_words, test_words, train_segs, test_segs = model.prepare_data(
         df, word_col='Word', segmentation_col=segmentation_column)
     
