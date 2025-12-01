@@ -60,6 +60,10 @@ module load miniforge3 # Or respective module load function for "conda"
 bash setup.sh
 ```
 ---
+### MorphologicalDatasetCreator.py
+| Variable | Description | Example Value |
+|----------|-------------|---------------|
+| `VERB_NOUN_GENERATED_CSV_PATH` | Path where the generated morphological dataset should be stored in CSV format | `"data/morphological_dataset/verb_noun_generated.csv"` |
 
 ## Individual Script Execution
 Before executing any scripts certain variables in indivudal .py scripts should be updated with respective values of corpus_paths or model save locations or model names as preferred. A detailed explanation on the properties and significance of these variables are provided below, according to individual .py file:
