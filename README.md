@@ -72,7 +72,7 @@ An extensive morphological dataset is created using this script, the words gener
 | `VERB_NOUN_GENERATED_CSV_PATH` | Path where the generated morphological dataset should be stored in CSV format |
 
 #### ObtainExistingMorphologicalWords.py
-Generated morphological words using the `src\MorphologicalDatasetCreator.py` is further inflected with single ending suffixes and then a subset of these generated words which exist in natural texts are extracted for further training of byte-level segemters. As a result of executing this script a segmentor training dataset is created in specific path.
+Generated morphological words using the [src/MorphologicalDatasetCreator.py/](MorphologicalDatasetCreator.py) is further inflected with single ending suffixes and then a subset of these generated words which exist in natural texts are extracted for further training of byte-level segemters. As a result of executing this script a segmentor training dataset is created in specific path.
 
 | Variable | Description |
 |----------|-------------|
