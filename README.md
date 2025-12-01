@@ -60,41 +60,53 @@ module load miniforge3 # Or respective module load function for "conda"
 bash setup.sh
 ```
 ---
-### MorphologicalDatasetCreator.py
-| Variable | Description | Example Value |
-|----------|-------------|---------------|
-| `VERB_NOUN_GENERATED_CSV_PATH` | Path where the generated morphological dataset should be stored in CSV format | `"data/morphological_dataset/verb_noun_generated.csv"` |
-
 ## Individual Script Execution
 Before executing any scripts certain variables in indivudal .py scripts should be updated with respective values of corpus_paths or model save locations or model names as preferred. A detailed explanation on the properties and significance of these variables are provided below, according to individual .py file:
 ### MorphologicalDatasetCreator.py
--- VERB_NOUN_GENERATED_CSV_PATH : The path where the generated morphological dataset should be stored in CSV format.
+| Variable | Description |
+|----------|-------------|
+| `VERB_NOUN_GENERATED_CSV_PATH` | Path where the generated morphological dataset should be stored in CSV format |
 ### ObtainExistingMorphologicalWords.py
--- VERB_NOUN_GENERATED_CSV_PATH : Identical to 'MorphologicalDatasetCreator.py' script.
--- COMPLETED_MORPH_OUTPUT_CHUNKS_DIR : A directory path, since a huge dataset is processed as chunks.
--- SEGMENTOR_TRAINING_COPRUS_PATH : Path to store the morphological segmentation dataset (in CSV format) used to train the ByT5Segmentor.
+| Variable | Description |
+|----------|-------------|
+| `VERB_NOUN_GENERATED_CSV_PATH` | Path to the generated morphological dataset (same as in MorphologicalDatasetCreator.py) |
+| `COMPLETED_MORPH_OUTPUT_CHUNKS_DIR` | Directory path for storing processed chunks of the morphological dataset |
+| `SEGMENTOR_TRAINING_CORPUS_PATH` | Path to store the morphological segmentation dataset used to train the ByT5Segmentor |
+
 ### ByT5Segmentor.py
--- SEGMENTER_MODEL_BASE_DIR : A directory path to store the trained segmenters.
--- SEGMENTOR_TRAINING_COPRUS_PATH : Identical to 'ObtainExistingMorphologicalWords.py'.
--- LOADED_PRETRAINED_SEGMENTOR_MODEL_PATH : A local path where the byt5-small model is loaded from huggingface.
+| Variable | Description |
+|----------|-------------|
+| `SEGMENTER_MODEL_BASE_DIR` | Directory path to store the trained segmenters |
+| `SEGMENTOR_TRAINING_CORPUS_PATH` | Path to the morphological segmentation dataset (same as in ObtainExistingMorphologicalWords.py) |
+| `LOADED_PRETRAINED_SEGMENTOR_MODEL_PATH` | Local path where the byt5-small model is loaded from Hugging Face |
+
 ### CorpusSegmenter.py
--- SEGMENTOR_MODELS_BASE_DIR : Identical to 'ByT5Segmentor.py' script.
--- TARGET_CORPUS_UNIQUE_WORDS_CSV_PATH : Unique words from an interested Tamil corpus or any dataset containing only words in a column in CSV format.
--- TARGET_CORPUS_PATH : Path to save the Tamil coprus where individual words are repalced with inferences morphological segmentations.
+| Variable | Description |
+|----------|-------------|
+| `SEGMENTOR_MODELS_BASE_DIR` | Directory path to the trained segmenter models (same as in ByT5Segmentor.py) |
+| `TARGET_CORPUS_UNIQUE_WORDS_CSV_PATH` | Path to CSV containing unique words from the target Tamil corpus |
+| `TARGET_CORPUS_PATH` | Path to save the Tamil corpus with morphologically segmented words |
+
 ### TokenizersTrainer.py
--- TOKENIZER_SAVE_DIR : A directory path to save the trianed tokenizers.
--- CLEANED_WIKI_CORPUS_PATH : Local Wikimedia Tamil corpus path.
--- CLEANED_INDIC_CORPUS_PATH : Local IndicNLP Tamil corpus path.
--- SSS_SEGMENTED_INDIC_CORPUS_PATH : Path of IndicNLP Tamil corpus produced as the result of 'CorpusSegmenter.py' for SSS-Scheme (the scheme-based segmentation is automatically handled through the slurm job script used to execute in HPC.)
--- CSS_SEGMENTED_INDIC_CORPUS_PATH : Path of IndicNLP Tamil corpus produced as the result of 'CorpusSegmenter.py' for CSS-Scheme.
--- BALANCED_CORPUS_DIR : A directory path to store size balanced corpora.
+| Variable | Description |
+|----------|-------------|
+| `TOKENIZER_SAVE_DIR` | Directory path to save the trained tokenizers |
+| `CLEANED_WIKI_CORPUS_PATH` | Local Wikimedia Tamil corpus path |
+| `CLEANED_INDIC_CORPUS_PATH` | Local IndicNLP Tamil corpus path |
+| `SSS_SEGMENTED_INDIC_CORPUS_PATH` | Path to IndicNLP Tamil corpus segmented using SSS-Scheme |
+| `CSS_SEGMENTED_INDIC_CORPUS_PATH` | Path to IndicNLP Tamil corpus segmented using CSS-Scheme |
+| `BALANCED_CORPUS_DIR` | Directory to store size-balanced corpora |
+
 ### TamilBERT.py
--- TAMIL_BERT_MODELS_BASE_DIR : Directory to save pre-trained Tamil BERT-style models as the output of theis script execution.
+| Variable | Description |
+|----------|-------------|
+| `TAMIL_BERT_MODELS_BASE_DIR` | Directory to save pre-trained Tamil BERT-style models |
+
 ### NERFinetuningTamilBERT.py
--- PRETRAINED_TAMIL_BERT_MODEL : Pre-trained model name (3 different models are trained, model names are the script arguments in `hpc\TamilBERT.sh`)
--- SAVED_CHECKPOINT_NAME : Model checkpoint folder name. (will be inside the dir: TAMIL_BERT_MODELS_BASE_DIR/TAMIL_BERT_MODELS_BASE_DIR)
-
-
+| Variable | Description |
+|----------|-------------|
+| `PRETRAINED_TAMIL_BERT_MODEL` | Name of the pre-trained Tamil BERT model to use |
+| `SAVED_CHECKPOINT_NAME` | Model checkpoint folder name (will be inside `TAMIL_BERT_MODELS_BASE_DIR`) |
 
 
 The source scripts must be executed in a specific order to follow the pipeline on creating the dataset and further downstream model trainings. 
