@@ -62,7 +62,7 @@ bash setup.sh
 
 ---
 ## Individual Script Execution
-Before executing any scripts certain variables in indivudal .py scripts should be updated with respective values of corpus_paths or model save locations or model names as preferred. All the individual scripts mentioned below shall be executed in HPC setup using slurm job schedulers. Individual slurm job scripts are located in `hpc/`, with identical name to the actual .py script. When executed, the scripts should be executed only in the specific order mentioned below. A detailed explanation on the properties and significance of these variables are provided below, according to individual .py file:
+Before executing any scripts certain variables in indivudal .py scripts should be updated with respective values of corpus_paths or model save locations or model names as preferred. All the individual scripts mentioned below shall be executed in HPC setup using slurm job schedulers. Individual slurm job scripts are located in [hpc/](hpc), with identical name to the actual .py script. When executed, the scripts should be executed only in the specific order mentioned below. A detailed explanation on the properties and significance of these variables are provided below, according to individual .py file:
 
 #### MorphologicalDatasetCreator.py
 An extensive morphological dataset is created using this script, the words generated are language rule based which uses a collection of root words, possible suffixes with their order of derivation and word formation rules. These words shall or shall not be existing in natural language texts, which shall be handled along with some more specific inflections in the later scripts.
