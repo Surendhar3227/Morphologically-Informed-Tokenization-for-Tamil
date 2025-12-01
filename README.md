@@ -1,7 +1,7 @@
 # Morphologically-Informed Tokenization for Tamil
 
 ## Description
-This repository contains code used to achieve moprhologically-informed tokenization for Tamil language. This tokenization strategy is based on word-replaced based pre-tokenization strategy. The key contributions of this project are custom curated Morphological dataset for Tamil, which contains gold-standard morphological segmentations for more than 500k unique Tamil words which appear in real-world corpuses. The scripts to reporduce this morphological datasets are atatched in the src/ directory.
+This repository contains the source code used to achieve moprhologically-informed tokenization for Tamil language. This tokenization strategy relies on word-replacement based pre-tokenization strategy. The key contributions of this project are custom curated Morphological dataset for Tamil, byte-level segmentor model for morphological segmentation of Tamil words, Morphologically-Informed Tokenizers. The scripts to reproduce this morphological datasets are atatched in the [src/](src) directory.
 
 This repository provides end-to-end tools for building, training, and evaluating morphological tokenizers and segmentors for languages such as Finnish and English. The project includes dataset builders, training pipelines for ByT5-based models, tokenizer training utilities, corpus processing tools, and evaluation scripts.
 
@@ -93,19 +93,6 @@ python src/ExpandGeneratedWords_CheckCoverage.py \
     --generated data/generated_words.txt \
     --corpus data/corpus.txt
 ```
-
----
-
-## 📊 Evaluation Metrics
-
-The project uses standard segmentation metrics:
-
-- **Precision** = correct predicted boundaries / predicted boundaries  
-- **Recall** = correct predicted boundaries / gold boundaries  
-- **F1** = harmonic mean of precision & recall  
-- **Accuracy** = proportion of correctly segmented tokens
-
-*(If you want, I can generate formulas, examples, or code snippets.)*
 
 ---
 
