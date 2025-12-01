@@ -105,7 +105,7 @@ class ByT5SegmentationModel:
         
         return train_words, test_words, train_segs, test_segs
     
-    def train(self, output_dir: str = "/projects/extern/react/react_ag_beinborn/react_ag_beinborn_students/dir.project/u17842/", 
+    def train(self, output_dir: str = [SEGMENTER_MODEL_SAVE_DIR], 
               num_epochs: int = 10, batch_size: int = 8, learning_rate: float = 5e-5, specific_folder: str = ""):
         output_dir = specific_folder
         os.makedirs(output_dir, exist_ok=True)

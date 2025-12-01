@@ -28,10 +28,13 @@ Morphologically-Informed Tokenization for Tamil/
 │   └── Multilingual_Tokenizer_Evaluation.ipynb
 │
 ├── hpc/
-│   ├── templates/
-│   ├── slurm_train.sbatch
-│   ├── slurm_train.sbatch
-│   ├── slurm_train.sbatch
+│   ├── ByT5Segmenter.sh
+│   ├── CorpusSegmenter.sh
+│   ├── MorphologicalDatasetCreator.sh
+│   ├── NERFinetuningTamilBERT.sh
+│   ├── ObtainExistingMorphologicalWords.sh
+│   ├── TamilBERT.sh
+│   ├── TokenizersTrainer.sh
 │       
 │
 ├── README.md
