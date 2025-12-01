@@ -175,10 +175,10 @@ def main():
     else:
         raise ValueError("Unknown dataset selection")
     
-    model_save_directory = train_dataset.name
+    model_name = train_dataset.name
     out_base = os.path.join(
-        [BADE_MODEL_DIR], 
-        model_save_directory
+        [TAMIL_BERT_MODELS_BASE_DIR], 
+        model_name
     )
     os.makedirs(out_base, exist_ok=True)
 

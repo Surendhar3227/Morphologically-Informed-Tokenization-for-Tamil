@@ -105,7 +105,7 @@ class ByT5SegmentationModel:
         
         return train_words, test_words, train_segs, test_segs
     
-    def train(self, output_dir: str = [SEGMENTER_MODEL_SAVE_DIR], 
+    def train(self, output_dir: str = [SEGMENTER_MODEL_BASE_DIR], 
               num_epochs: int = 10, batch_size: int = 8, learning_rate: float = 5e-5, specific_folder: str = ""):
         output_dir = specific_folder
         os.makedirs(output_dir, exist_ok=True)
@@ -221,7 +221,6 @@ def safe_literal_eval(x):
         return [str(x)]
             
 def main():
-    segmentor_dir = [SEGMENTOR_MODELS_BASE_DIR]
     df = pd.read_csv([SEGMENTOR_TRAINING_COPRUS_PATH], index_col=None)
     
     parser = argparse.ArgumentParser(description='Description of your program')

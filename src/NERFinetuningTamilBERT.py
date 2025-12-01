@@ -15,9 +15,9 @@ from seqeval.metrics import (
 
 MODEL_NAME = [PRETRAINED_TAMIL_BERT_MODEL] # Different trained models should be mentioned here
 CHECKPOINT = [SAVED_CHECKPOINT_NAME] # Different checkpoints should be mentioned here
-MODEL_DIR = f"[PRETRAINED_MODEL_PATH]/{MODEL_NAME}/{CHECKPOINT}"
+MODEL_DIR = f"[TAMIL_BERT_MODELS_BASE_DIR]/{MODEL_NAME}/{CHECKPOINT}"
 PARQUET_DIR = "./Datasets/TamilNER/WikiAnn"
-OUTPUT_DIR = f"[PRETRAINED_MODEL_PATH]/{MODEL_NAME}/tamil_ner_finetuned"
+OUTPUT_DIR = f"[TAMIL_BERT_MODELS_BASE_DIR]/{MODEL_NAME}/tamil_ner_finetuned"
 
 LABELS = ["O", "B-PER", "I-PER", "B-ORG", "I-ORG", "B-LOC", "I-LOC", "B-MISC", "I-MISC"]
 LABEL2ID = {label: i for i, label in enumerate(LABELS)}
