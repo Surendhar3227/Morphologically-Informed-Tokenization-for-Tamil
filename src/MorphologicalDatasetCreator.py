@@ -3,7 +3,7 @@ import pandas as pd
 import string
 from tqdm import tqdm 
 import ast
-from Inflection_functions import *
+from inflection_functions import *
 
 def extract_tamil_pos_data(file_paths, output_csv='tamil_pos_dataset.csv', unique_only=False):
     if isinstance(file_paths, str):

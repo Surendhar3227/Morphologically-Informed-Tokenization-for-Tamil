@@ -1,5 +1,3 @@
-# Core_functions.py
-
 from tokenizers import Tokenizer
 import sentencepiece as spm
 from transformers import AutoTokenizer

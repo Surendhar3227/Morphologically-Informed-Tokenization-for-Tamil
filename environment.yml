@@ -1,0 +1,33 @@
+name: thesis
+channels:
+  - conda-forge
+  - huggingface
+  - nvidia
+  - pytorch
+dependencies:
+  - python=3.12
+  - pytorch=2.2.0
+  - torchvision=0.17.0
+  - torchaudio=2.2.0
+  - pytorch-cuda=12.1
+  - tqdm
+  - requests
+  - transformers
+  - tensorboard
+  - tokenizers
+  - pip
+  - pip:
+      - "numpy<2.0"
+      - torch
+      - sacrebleu
+      - sentencepiece
+      - evaluate
+      - nltk
+      - protobuf
+      - seaborn
+      - accelerate
+      - bert_score
+      - 'indic-nlp-library'
+      - stanza
+      - linguistica
+      - "pillow<9"
