@@ -3,9 +3,7 @@
 ## Description
 This repository contains the source code used to achieve moprhologically-informed tokenization for Tamil language. This tokenization strategy relies on word-replacement based pre-tokenization strategy. The key contributions of this project are custom curated Morphological dataset for Tamil, byte-level segmentor model for morphological segmentation of Tamil words, Morphologically-Informed Tokenizers. The scripts to reproduce this morphological datasets are atatched in the [src/](src) directory.
 
-This repository provides end-to-end tools for building, training, and evaluating morphological tokenizers and segmentors for languages such as Finnish and English. The project includes dataset builders, training pipelines for ByT5-based models, tokenizer training utilities, corpus processing tools, and evaluation scripts.
-
-This repository is designed to be reproducible, provided there is sufficient compute resources to execute heavy-compute scripts. Most of the heavy-compute scripts (everything in `src/` except `core_functions.py` and `inflections.py`) are compatible with SLURM batch execution.
+The structure and instructions to use the scripts are explained below with respective to the key contributions. This repository is designed to be reproducible, provided there is sufficient compute resources to execute heavy-compute scripts. Most of the heavy-compute scripts (everything in `src/` except `core_functions.py` and `inflections.py`) are compatible with SLURM batch execution. Recommended to use HPC clusters than local devices.
 
 ---
 
@@ -38,22 +36,28 @@ Morphologically-Informed Tokenization for Tamil/
 │       
 │
 ├── README.md
-├── README-HPC.md
-└── requirements.txt
+└── environment.yml
+└── setup.sh
 ```
 
 ---
 
-## 🧪 Installation
+## Installation / Forking
 
+1. Process to create python environment through requirements file
 ```bash
 git clone <repo-url>
-cd Morphological-Tokenization
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+cd Morphologically-Informed-Tokenization-for-Tamil
+conda env create -f environment.yml
+conda activate thesis
 ```
 
+2. Process to create python environment through bash script
+```bash
+git clone <repo-url>
+cd Morphologically-Informed-Tokenization-for-Tamil
+module load miniforge3 # Or respective module load function for "conda"
+bash setup.sh
 ---
 
 ## 🛠️ Usage
