@@ -20,7 +20,8 @@ Morphologically-Informed Tokenization for Tamil/
 │   ├── ExpandGeneratedWords_CheckCoverage.py
 │   ├── core_functions.py
 │   ├── inflections.py
-│   └── (other utility scripts)
+│   ├── TamilBERT.py
+│   └── NERFinetuningTamilBERT.py
 |
 ├── notebooks/
 │   └── Multilingual_Tokenizer_Evaluation.ipynb
